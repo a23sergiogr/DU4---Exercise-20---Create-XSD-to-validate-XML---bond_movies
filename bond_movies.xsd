@@ -4,7 +4,7 @@
             <xsd:sequence>
                 <xsd:element name="movie" type="movieType" maxOccurs="unbounded" />
             </xsd:sequence>
-            <xsd:attribute name="month" type="xsd:monthType" />
+            <xsd:attribute name="month" type="monthType" />
             <xsd:attribute name="year" type="xsd:string" />
         </xsd:complexType>
     </xsd:element>
