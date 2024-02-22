@@ -1,0 +1,49 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="bond_movies">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="movie" type="movieType" maxOccurs="unbounded" />
+            </xsd:sequence>
+            <xsd:attribute name="month" type="xsd:monthType" />
+            <xsd:attribute name="year" type="xsd:string" />
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:complexType name="movieType">
+        <xsd:sequence>
+            <xsd:element name="title" type="xsd:string" />
+            <xsd:element name="bond" type="xsd:string" />
+            <xsd:element name="bond_girl" type="xsd:string" />
+            <xsd:element name="regie" type="xsd:string" />
+            <xsd:element name="year" type="xsd:string" />
+            <xsd:element name="duration" type="durationType" />
+        </xsd:sequence>
+        <xsd:attribute name="number" type="numberType" />
+    </xsd:complexType>
+    <xsd:simpleType name="durationType">
+        <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="0" />
+            <xsd:maxInclusive value="300" />
+        </xsd:restriction>
+    </xsd:simpleType>    
+    <xsd:simpleType name="numberType">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="_\d{2}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="monthType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="January" />
+            <xsd:enumeration value="February" />
+            <xsd:enumeration value="March" />
+            <xsd:enumeration value="April" />
+            <xsd:enumeration value="May" />
+            <xsd:enumeration value="June" />
+            <xsd:enumeration value="July" />
+            <xsd:enumeration value="August" />
+            <xsd:enumeration value="September" />
+            <xsd:enumeration value="October" />
+            <xsd:enumeration value="November" />
+            <xsd:enumeration value="December" />
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>
